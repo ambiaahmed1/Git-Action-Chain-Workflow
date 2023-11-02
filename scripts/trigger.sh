@@ -1,7 +1,10 @@
 #!/bin/bash
 set -ex
-curl -X POST -H "Authorization: Bearer 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" \
-  -H "Accept: application/vnd.github.everest-preview+json" \
+
+EXTERNAL_PAT="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"
+REPO_URL="https://api.github.com/ambiaahmed1/Selenium-Git-CI-Solution.git/dispatches"
+
+curl -X POST -H "Authorization: Bearer $EXTERNAL_PAT" \
   -H "Content-Type: application/json" \
-  https://api.github.com/ambiaahmed1/Selenium-Git-CI-Solution.git \
+  $REPO_URL \
   --data '{"event_type": "trigger-workflow"}'
