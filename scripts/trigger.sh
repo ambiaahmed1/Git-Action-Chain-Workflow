@@ -2,7 +2,7 @@
 set -ex
 
 EXTERNAL_PAT="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"
-REPO_URL="https://api.github.com/ambiaahmed1/Selenium-Git-CI-Solution.git/dispatches"
+REPO_URL="https://api.github.com/ambiaahmed1/Selenium-Git-CI-Solution/dispatches"
 
 curl -X POST -H "Authorization: Bearer $EXTERNAL_PAT" \
   -H "Content-Type: application/json" \
