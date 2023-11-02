@@ -24,7 +24,7 @@ public class SeleniumGitCI {
         driver = new ChromeDriver(options);
         driver.navigate().to("https://www.google.com");
         driver.manage().window().maximize();
-        //test
+        //test123
         driver.manage().timeouts().implicitlyWait(120, TimeUnit.MILLISECONDS);
     }
 
