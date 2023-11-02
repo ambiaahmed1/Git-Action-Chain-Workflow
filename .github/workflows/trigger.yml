@@ -1,0 +1,19 @@
+name: Trigger Workflow
+
+on:
+  repository_dispatch:
+    types: [trigger-workflow]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+
+      - name: Run Selenium Test # Using shell script to run selenium test repo
+        run: |
+          chmod +x ./scripts/trigger.sh
+                      ./scripts/trigger.sh
+
+    # Add your desired workflow steps here
