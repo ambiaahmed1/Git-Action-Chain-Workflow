@@ -14,9 +14,9 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v2
 
-      - name: Run Selenium Test # Using shell script to run selenium test repo
+      - name: Run Trigger # Using shell script to run selenium test repo
         run: |
-          chmod +x ./scripts/trigger.sh
-                      ./scripts/trigger.sh
+              chmod +x ./scripts/trigger.sh
+                        ./scripts/trigger.sh
 
     # Add your desired workflow steps here
