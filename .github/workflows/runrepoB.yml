@@ -1,0 +1,20 @@
+name: Trigger External Workflow
+
+on:
+  push:
+    branches:
+      - main
+  workflow_run:
+    workflows: ["Trigger External Workflow in Repository B"]
+    types:
+      - completed
+
+jobs:
+  trigger_external:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger Workflow in Repository B
+        env:
+          TOKEN: ${{ secrets.EXTERNAL_REPO_TOKEN }}
+        run: |
+          curl -X POST -H "Authorization: token $TOKEN" -H "Accept: application/vnd.github.v3+json" https://api.github.com/ambiaahmed1/RepositoryB/dispatches --data '{"event_type": "trigger-external-workflow"}'
