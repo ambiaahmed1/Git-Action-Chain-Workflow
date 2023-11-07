@@ -1,6 +1,9 @@
-name: Trigger External Workflow Dev Repo
+
 
 on: workflow_dispatch
+  push:
+    branches:
+      - main
 jobs:
   trigger-test:
     runs-on: ubuntu-latest
