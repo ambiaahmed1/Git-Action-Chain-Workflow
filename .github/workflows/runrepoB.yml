@@ -17,4 +17,4 @@ jobs:
         env:
           TOKEN: ${{ secrets.EXTERNAL_REPO_TOKEN }}
         run: |
-          curl -X POST -H "Authorization: token $TOKEN" -H "Accept: application/vnd.github.v3+json" https://api.github.com/ambiaahmed1/RepositoryB/dispatches --data '{"event_type": "trigger-external-workflow"}'
+          curl -X POST -H "Authorization: token EXTERNAL_REPO_TOKEN" -H "Accept: application/vnd.github.v3+json" https://api.github.com/ambiaahmed1/RepositoryB/dispatches --data '{"event_type": "trigger-external-workflow"}'
