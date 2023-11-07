@@ -1,0 +1,13 @@
+name: Trigger External Workflow Dev Repo
+
+on: workflow_dispatch
+jobs:
+  trigger-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: run the workflow
+      - uses: peter-evans/repository-dispatch@v2
+        with:
+          token: ${{ secrets.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 }}
+          repository: ambiaahmed1/RepositoryB
+          event-type: my-event
