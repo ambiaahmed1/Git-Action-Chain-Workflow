@@ -16,6 +16,6 @@ jobs:
     steps:
       - name: Trigger Workflow in Repository B
         env:
-          TOKEN: ${{ secrets.PAT2 }}
+          TOKEN: ${{ secrets.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 }}
         run: |
-          curl -X POST -H "Authorization: token PAT2" -H "Accept: application/vnd.github.v3+json" https://api.github.com/ambiaahmed1/RepositoryB/dispatches --data '{"event_type": "trigger-external-workflow"}'
+          curl -X POST -H "Authorization: Bearer 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" -H "Accept: application/vnd.github.v3+json" https://api.github.com/repos/ambiaahmed1/RepositoryB/dispatches --data "{\"event_type\": \"trigger-external-workflow\"}"
